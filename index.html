@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshika Tyagi | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #080808;
+            color: white;
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+        }
+
+        header {
+            background-color: #100c19;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            color: white;
+        }
+
+        .logo span {
+            color: #a855f7;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav ul li a:hover {
+            color: #b56aff;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-buttons button {
+            background: #25163b;
+            color: white;
+            border: none;
+            padding: 9px 13px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .menu-button {
+            display: none;
+        }
+
+        .home {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 50px 10%;
+            background: radial-gradient(circle, #24133b, #080808 65%);
+        }
+
+        .home-content {
+            max-width: 650px;
+        }
+
+        .small-heading {
+            color: #b56aff;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .home h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .home h1 span {
+            color: #a855f7;
+        }
+
+        .home h3 {
+            color: #c9b5df;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            color: #bdb5c7;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #7029d9, #a855f7);
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 7px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .second-btn {
+            background: transparent;
+            border: 1px solid #a855f7;
+        }
+
+        .section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #a855f7;
+        }
+
+        .about-box {
+            background-color: #15101e;
+            border: 1px solid #38244e;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 850px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .about-box p {
+            color: #c5bdce;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .education-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .education-box {
+            background-color: #15101e;
+            border: 1px solid #38244e;
+            padding: 25px;
+            border-radius: 10px;
+            width: 280px;
+            text-align: left;
+        }
+
+        .education-box h3 {
+            color: #b56aff;
+            margin-bottom: 15px;
+        }
+
+        .education-box p {
+            color: #c5bdce;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .skill-box {
+            background-color: #15101e;
+            border: 1px solid #38244e;
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            text-align: left;
+        }
+
+        .skill-box h3 {
+            color: #b56aff;
+            margin-bottom: 20px;
+        }
+
+        .skill-box ul {
+            list-style: none;
+        }
+
+        .skill-box ul li {
+            background-color: #261738;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            color: #e4d8f0;
+        }
+
+        .project-box {
+            max-width: 650px;
+            margin: auto;
+            padding: 35px;
+            background-color: #15101e;
+            border: 1px solid #38244e;
+            border-radius: 12px;
+        }
+
+        .project-box h3 {
+            color: #b56aff;
+            margin-bottom: 20px;
+        }
+
+        .project-box p {
+            color: #c5bdce;
+            line-height: 1.8;
+        }
+
+        .project-note {
+            margin-top: 15px;
+        }
+
+        .contact-text {
+            color: #c5bdce;
+            margin-bottom: 25px;
+        }
+
+        form {
+            max-width: 550px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 14px;
+            border: 1px solid #49315f;
+            border-radius: 7px;
+            background-color: #15101e;
+            color: white;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #a855f7;
+        }
+
+        textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        #formMessage {
+            color: #b56aff;
+            margin-top: 10px;
+        }
+
+        .email {
+            color: #c5bdce;
+            margin-top: 25px;
+        }
+
+        footer {
+            background-color: #100c19;
+            text-align: center;
+            padding: 25px;
+            color: #aaa;
+            line-height: 2;
+            font-size: 14px;
+        }
+
+        .light-mode {
+            background-color: #f5f0fa;
+            color: #21152d;
+        }
+
+        .light-mode header,
+        .light-mode footer {
+            background-color: #e6d9f5;
+        }
+
+        .light-mode nav ul li a,
+        .light-mode .logo {
+            color: #21152d;
+        }
+
+        .light-mode nav ul {
+            background-color: #e6d9f5;
+        }
+
+        .light-mode .home {
+            background: linear-gradient(120deg, #eadbfa, #f8f5fc);
+        }
+
+        .light-mode .home h3,
+        .light-mode .intro,
+        .light-mode .about-box p,
+        .light-mode .education-box p,
+        .light-mode .project-box p,
+        .light-mode .contact-text,
+        .light-mode .email {
+            color: #44364e;
+        }
+
+        .light-mode .about-box,
+        .light-mode .education-box,
+        .light-mode .skill-box,
+        .light-mode .project-box,
+        .light-mode input,
+        .light-mode textarea {
+            background-color: #eaddf5;
+            color: #21152d;
+        }
+
+        .light-mode .skill-box ul li {
+            background-color: #d9c3ef;
+            color: #21152d;
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 65px;
+                right: 5%;
+                background-color: #21152d;
+                width: 190px;
+                padding: 20px;
+                border-radius: 8px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .home {
+                min-height: 80vh;
+                padding: 50px 7%;
+            }
+
+            .home h1 {
+                font-size: 38px;
+            }
+
+            .home h3 {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 60px 7%;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+            .education-box,
+            .skill-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h2 class="logo">H<span>T.</span></h2>
+
+            <ul id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+                <button id="themeButton" onclick="changeTheme()">☀</button>
+                <button class="menu-button" onclick="toggleMenu()">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <div class="home-content">
+            <p class="small-heading">WELCOME TO MY PORTFOLIO</p>
+
+            <h1>Hello, I'm <br>
+                <span>Harshika Tyagi</span>
+            </h1>
+
+            <h3>B.Tech Computer Science Student</h3>
+
+            <p class="intro">
+                I am an ambitious and hardworking student who enjoys
+                solving daily life problems and learning new things.
+                I look forward to every work with curiosity.
+            </p>
+
+            <a href="#projects" class="btn">Explore My Projects</a>
+            <a href="#contact" class="btn second-btn">Contact Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <div class="about-box">
+            <p>
+                Hello! I am Harshika Tyagi, a first-year B.Tech
+                student from the Computer Science branch at
+                Krishna Institute of Engineering and Technology.
+            </p>
+
+            <p>
+                I am an ambitious and hardworking person.
+                I enjoy solving daily life problems and learning
+                new things. I look forward to every work with
+                curiosity and a positive attitude.
+            </p>
+
+            <p>
+                My goal is to improve my technical knowledge,
+                develop new skills and become a better version
+                of myself every day.
+            </p>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <h2 class="section-title">My <span>Education</span></h2>
+
+        <div class="education-container">
+
+            <div class="education-box">
+                <h3>Bachelor of Technology</h3>
+                <p>Krishna Institute of Engineering and Technology</p>
+                <p>Computer Science Branch</p>
+                <p>1st Year</p>
+            </div>
+
+            <div class="education-box">
+                <h3>Class 12th</h3>
+                <p>Mount Carmel School, Muradnagar, Ghaziabad</p>
+                <p>Percentage: 90.5%</p>
+            </div>
+
+            <div class="education-box">
+                <h3>Class 10th</h3>
+                <p>Mount Carmel School, Muradnagar, Ghaziabad</p>
+                <p>Percentage: 93.2%</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title">My <span>Skills</span></h2>
+
+        <div class="skills-container">
+
+            <div class="skill-box">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>C++</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+
+            <div class="skill-box">
+                <h3>Non-Technical Skills</h3>
+                <ul>
+                    <li>Communication</li>
+                    <li>Teamwork</li>
+                    <li>Creativity</li>
+                    <li>Problem Solving</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <div class="project-box">
+            <h3>Projects Coming Soon!</h3>
+
+            <p>
+                I am currently learning and exploring different
+                technologies. I look forward to working on
+                interesting projects and applying my knowledge
+                to real-world problems.
+            </p>
+
+            <p class="project-note">
+                More projects will be added here.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+
+        <p class="contact-text">
+            Have a question or want to connect?
+            Feel free to send me a message.
+        </p>
+
+        <form id="contactForm">
+
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <textarea id="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+
+            <p id="formMessage"></p>
+
+        </form>
+
+        <p class="email">
+            Email: harshikat2024@gmail.com
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Harshika Tyagi | Personal Portfolio</p>
+        <p>Designed and created by Harshika Tyagi</p>
+    </footer>
+
+    <script>
+        function changeTheme() {
+            document.body.classList.toggle("light-mode");
+
+            let button = document.getElementById("themeButton");
+
+            if (document.body.classList.contains("light-mode")) {
+                button.innerHTML = "☾";
+            } else {
+                button.innerHTML = "☀";
+            }
+        }
+
+        function toggleMenu() {
+            let menu = document.getElementById("navLinks");
+            menu.classList.toggle("show");
+        }
+
+        let navItems = document.querySelectorAll("#navLinks a");
+
+        navItems.forEach(function(item) {
+            item.addEventListener("click", function() {
+                document.getElementById("navLinks").classList.remove("show");
+            });
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            let result = document.getElementById("formMessage");
+
+            if (name === "" || email === "" || message === "") {
+                result.innerHTML = "Please fill all the fields.";
+                return;
+            }
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                result.innerHTML = "Please enter a valid email address.";
+                return;
+            }
+
+            result.innerHTML = "Thank you! Your message has been submitted successfully.";
+
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+
+</body>
+</html>
